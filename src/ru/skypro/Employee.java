@@ -1,7 +1,7 @@
 package ru.skypro;
 
 public class Employee {
-    private static int id;
+    private final int id;
     private final String fullName;
     private float salary;
     private int department;

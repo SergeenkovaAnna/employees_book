@@ -24,27 +24,32 @@ public class Main {
         minSalary();
         maxSalary();
         printFullName();
-
-
     }
 
-    private static void maxSalary() {
+    private static Employee maxSalary() {
         float max = 0;
-        for (int i = 0; i < employees.length; i++){
+        Employee employeeMaxSalaryCard = employees[0];
+        for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > max) {
                 max = employees[i].getSalary();
+                employeeMaxSalaryCard = employees[i];
             }
         }
-        System.out.println("Максимальное значение зарплаты: " + max);
+        System.out.println("Максимальное значение зарплаты: " + max + "; Карточка сотрудника: " + employeeMaxSalaryCard);
+        return employeeMaxSalaryCard;
     }
 
-    private static void minSalary() {
-        float min = 999999999;
+    private static Employee minSalary() {
+        float min = employees[0].getSalary();
+        Employee employeeMinSalaryCard = employees[0];
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < min) {
                 min = employees[i].getSalary();
-            }}
-        System.out.println("Минимальное значение зарплаты: " + min);
+                employeeMinSalaryCard = employees[i];
+            }
+        }
+        System.out.println("Минимальное значение зарплаты: " + min + "; Карточка сотрудника: " + employeeMinSalaryCard);
+        return employeeMinSalaryCard;
     }
 
     private static float calculateSum() {
