@@ -1,7 +1,5 @@
 package ru.skypro;
 
-import java.util.Arrays;
-
 public class Main {
 
     private static final Employee[] employees = new Employee[10];
@@ -18,7 +16,7 @@ public class Main {
         addEmployee(new Employee("Белов Юрий Антонович", 64_731f, 4));
         addEmployee(new Employee("Яковлев Николай Павлович", 61_000f, 5));
 
-        System.out.println(Arrays.toString(employees));
+        printEmployeeBook();
         System.out.println("Общая сумма затрат на зарплаты: " + calculateSum());
         System.out.println("Средний размер зарплаты: " + calculateAverageSum());
         minSalary();
@@ -82,4 +80,10 @@ public class Main {
         return false;
     }
 
+     public static Employee[] printEmployeeBook() {
+        for (Employee employee : employees) {
+            System.out.println(employee);
+        }
+        return employees;
+    }
 }
